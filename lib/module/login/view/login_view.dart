@@ -1,15 +1,8 @@
-<<<<<<< HEAD
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_ui/shared/util/db_service/db_servicee.dart';
-=======
-import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_ui/service/db_service/db_servicee.dart';
->>>>>>> 7b7ddd0 (01_login_not_work_sharedPreferences)
 import 'package:hyper_ui/shared/util/validator/validator.dart';
 import 'package:hyper_ui/shared/widget/form/button/button.dart';
 import 'package:hyper_ui/shared/widget/form/textfield/text_field.dart';
@@ -116,7 +109,6 @@ class _LoginViewState extends State<LoginView> {
                       ),
                     ],
                   ),
-<<<<<<< HEAD
                 )
                     .animate()
                     .moveY(
@@ -127,8 +119,6 @@ class _LoginViewState extends State<LoginView> {
                     ),
                 SizedBox(
                   height: 20.0,
-=======
->>>>>>> 7b7ddd0 (01_login_not_work_sharedPreferences)
                 ),
                 QTextField(
                   label: "Email",
@@ -137,7 +127,6 @@ class _LoginViewState extends State<LoginView> {
                   value: controller.state.email,
                   onChanged: (value) {
                     controller.state.email = value; //7 add ini
-<<<<<<< HEAD
                     DBServicee.set("email", value);
                   },
                 )
@@ -149,11 +138,6 @@ class _LoginViewState extends State<LoginView> {
                     .fadeIn(
                       duration: 800.ms,
                     ),
-=======
-                    DBService.set("email", value);
-                  },
-                ),
->>>>>>> 7b7ddd0 (01_login_not_work_sharedPreferences)
                 QTextField(
                   label: "Password",
                   obscure: true,
@@ -162,7 +146,6 @@ class _LoginViewState extends State<LoginView> {
                   value: null,
                   onChanged: (value) {
                     controller.state.password = value; //7 add ini
-<<<<<<< HEAD
                     DBServicee.set("password", value);
                   },
                 )
@@ -174,10 +157,6 @@ class _LoginViewState extends State<LoginView> {
                     .fadeIn(
                       duration: 800.ms,
                     ),
-=======
-                  },
-                ),
->>>>>>> 7b7ddd0 (01_login_not_work_sharedPreferences)
                 QButton(
                   label: "Login",
                   onPressed: () {

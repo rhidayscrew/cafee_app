@@ -1,10 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-<<<<<<< HEAD
 class DBServicee {
-=======
-class DBService {
->>>>>>> 7b7ddd0 (01_login_not_work_sharedPreferences)
   //static final DBService _instance = DBService._internal();
   static SharedPreferences? prefs;
   // static late SharedPreferences prefs;
