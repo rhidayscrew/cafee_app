@@ -1,3 +1,4 @@
+import 'package:hyper_ui/shared/widget/form/searchfield/searchfieldcafee.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -136,51 +137,9 @@ class _DashboardViewState extends State<DashboardView> {
                       SizedBox(
                         height: 12.0,
                       ),
-                      Container(
-                        height: 46,
-                        decoration: BoxDecoration(
-                          color: Color(0xff313131),
-                          borderRadius: BorderRadius.circular(16.0),
-                        ),
-                        padding: EdgeInsets.symmetric(horizontal: 12.0),
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.search,
-                              color: Colors.white,
-                            ),
-                            SizedBox(width: 8.0),
-                            Expanded(
-                              child: TextField(
-                                decoration: InputDecoration.collapsed(
-                                  hintText: 'Search',
-                                  hintStyle: TextStyle(
-                                    color: Colors.white.withOpacity(0.4),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 8.0),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(8.0),
-                              child: Material(
-                                color: Colors.blueGrey[900],
-                                child: InkWell(
-                                  onTap: () {
-                                    // TODO: Add action here
-                                  },
-                                  child: Container(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Icon(
-                                      Icons.tune,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                      SearchFieldCafee(
+                        hintText: "Cari",
+                        onChanged: (valu) {},
                       ),
                     ],
                   ),
