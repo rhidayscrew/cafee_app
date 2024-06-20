@@ -1,7 +1,7 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_ui/service/db_service/db_servicee.dart';
+import 'package:hyper_ui/service/db_service/db_service.dart';
 import 'package:hyper_ui/shared/util/validator/validator.dart';
 import 'package:hyper_ui/shared/widget/form/button/button.dart';
 import 'package:hyper_ui/shared/widget/form/textfield/text_field.dart';

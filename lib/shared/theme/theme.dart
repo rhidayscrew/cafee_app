@@ -95,7 +95,7 @@ ThemeData getDefaultTheme() {
       elevation: 0.6,
       color: const Color(0xfff6f6f6),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(8),
         side: BorderSide(
           width: 0.4,
           color: Colors.grey[300]!,

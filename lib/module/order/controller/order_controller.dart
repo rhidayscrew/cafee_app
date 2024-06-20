@@ -1,17 +1,15 @@
+
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/service/db_service/db_service.dart';
-import '../state/login_state.dart';
+import '../state/order_state.dart';
 import 'package:hyper_ui/bloc_util.dart';
 import 'package:injectable/injectable.dart';
 
 @singleton
-class LoginController extends Cubit<LoginState> implements IBlocBase {
-  LoginController() : super(LoginState());
+class OrderController extends Cubit<OrderState> implements IBlocBase {
+  OrderController() : super(OrderState());
 
   @override
   void initState() {
-    state.email = DBService.get("email");
     //initState event
   }
 
@@ -29,9 +27,7 @@ class LoginController extends Cubit<LoginState> implements IBlocBase {
     state.counter++;
     emit(state.copyWith());
   }
-
-  // 4 add methodt login
-  login() async {
-    Get.offAll(MainNavigationView());
-  }
 }
+    
+      
+    
