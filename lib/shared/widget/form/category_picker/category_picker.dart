@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:hyper_ui/shared/theme/theme_config.dart';
 
 class QCategoryPicker extends StatefulWidget {
@@ -176,7 +177,14 @@ class _QCategoryPickerState extends State<QCategoryPicker> {
                               ),
                             ),
                           ),
-                        );
+                        )
+                            .animate()
+                            .move(
+                              duration: ((index * 200) + 500).ms,
+                            )
+                            .fadeIn(
+                              duration: ((index * 200) + 500).ms,
+                            );
                       }),
                     ),
                   ),

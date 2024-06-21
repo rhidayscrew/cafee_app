@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:hyper_ui/module/dashboard/widget/dashboard_banner.dart';
 import 'package:hyper_ui/shared/widget/form/searchfield/searchfieldcafee.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -60,100 +63,158 @@ class _DashboardViewState extends State<DashboardView> {
     DashboardState state,
   ) {
     return Scaffold(
-      body: Container(
-        color: Colors.yellow,
-        height: MediaQuery.of(context).size.height,
-        child: Stack(
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        controller: ScrollController(),
+        child: Column(
           children: [
             Container(
-              height: 200,
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    Color(0xff141414),
-                    Color(0xff303030),
-                  ],
-                ),
-              ),
-              child: SafeArea(
-                child: Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+              color: Colors.white,
+              height: 320.0,
+              child: Stack(
+                children: [
+                  Container(
+                    height: 200,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topRight,
+                        end: Alignment.bottomLeft,
+                        colors: [
+                          Color(0xff141414),
+                          Color(0xff303030),
+                        ],
+                      ),
+                    ),
+                    child: SafeArea(
+                      child: Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: Column(
+                          children: [
+                            Row(
                               children: [
-                                Text(
-                                  "Location",
-                                  style: TextStyle(
-                                    fontSize: 12.0,
-                                    color: Colors.white,
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Location",
+                                        style: TextStyle(
+                                          fontSize: 12.0,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            "Bogor Indonesia",
+                                            style: TextStyle(
+                                              fontSize: 14.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                          Icon(
+                                            MdiIcons.chevronDown,
+                                            size: 18.0,
+                                            color: Colors.white,
+                                          ),
+                                        ],
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                Row(
-                                  children: [
-                                    Text(
-                                      "Bogor Indonesia",
-                                      style: TextStyle(
-                                        fontSize: 14.0,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
+                                Container(
+                                  height: 48,
+                                  width: 48,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                        "https://res.cloudinary.com/dotz74j1p/raw/upload/v1716044979/nr7gt66alfhmu9vaxu2u.png",
+                                      ),
+                                      fit: BoxFit.cover,
+                                    ),
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(
+                                        8.0,
                                       ),
                                     ),
-                                    Icon(
-                                      MdiIcons.chevronDown,
-                                      size: 18.0,
-                                      color: Colors.white,
-                                    ),
-                                  ],
+                                  ),
                                 ),
                               ],
                             ),
-                          ),
-                          Container(
-                            height: 48,
-                            width: 48,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: NetworkImage(
-                                  "https://res.cloudinary.com/dotz74j1p/raw/upload/v1716044979/nr7gt66alfhmu9vaxu2u.png",
-                                ),
-                                fit: BoxFit.cover,
-                              ),
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(
-                                  8.0,
-                                ),
-                              ),
+                            SizedBox(
+                              height: 12.0,
                             ),
-                          ),
-                        ],
+                            SearchFieldCafee(
+                              hintText: "Cari",
+                              onChanged: (valu) {},
+                            ),
+                          ],
+                        ),
                       ),
-                      SizedBox(
-                        height: 12.0,
-                      ),
-                      SearchFieldCafee(
-                        hintText: "Cari",
-                        onChanged: (valu) {},
-                      ),
-                    ],
+                    ),
                   ),
-                ),
+                  Positioned(
+                    left: 24,
+                    right: 24,
+                    top: 150,
+                    child: Dashboardbanner(),
+                  )
+                ],
               ),
             ),
-            Positioned(
-              left: 24,
-              right: 24,
-              top: 150,
-              //snipet hyper extention add banner_image_text
-              child: Dashboardbanner(),
-            )
+            // Memakai reusable wigget yg ada di : lib-widget-category_picker :q_category_picker
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: Column(
+                children: [
+                  QCategoryPicker(
+                    key: Key(Random().nextInt(1000).toString()),
+                    items: [
+                      {
+                        "label": "Main Course",
+                        "value": "Main Course",
+                      },
+                      {
+                        "label": "Drink",
+                        "value": "Drink",
+                      },
+                      {
+                        "label": "Snack",
+                        "value": "Snack",
+                      },
+                      {
+                        "label": "Dessert",
+                        "value": "Dessert",
+                      },
+                      {
+                        "label": "Main Course",
+                        "value": "Main Course",
+                      },
+                      {
+                        "label": "Drink",
+                        "value": "Drink",
+                      },
+                      {
+                        "label": "Snack",
+                        "value": "Snack",
+                      },
+                      {
+                        "label": "Dessert",
+                        "value": "Dessert",
+                      }
+                    ],
+                    validator: Validator.required,
+                    onChanged: (index, label, value, item) {},
+                  ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
