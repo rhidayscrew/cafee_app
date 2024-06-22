@@ -67,9 +67,9 @@ class _DashboardViewState extends State<DashboardView> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        key: Key(Random()
-            .nextInt(1000)
-            .toString()), // key : agar tidak ribet hot restart berkalixX, nanti dihapus ajah
+        // key: Key(Random()
+        //     .nextInt(1000)
+        //     .toString()), // key : agar tidak ribet hot restart berkalixX, nanti dihapus ajah
         controller: ScrollController(),
         child: Column(
           children: [
