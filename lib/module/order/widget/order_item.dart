@@ -16,28 +16,90 @@ class OrderItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DateTime date = DateTime.parse(item["date"]);
+    String dMMMy = DateFormat("d MMM y").format(date);
+    String time = DateFormat("kk:mm").format(date);
+
+    bool isPurchase = item["type"] == "Purchase";
+
+    Color color = successColor;
+    if (isPurchase) {
+      color = dangerColor;
+    }
+
+    IconData icon = Icons.arrow_circle_right_outlined;
+    if (isPurchase) {
+      icon = Icons.arrow_circle_left_outlined;
+    }
+    String nowf = DateFormat("dd-MM-yyy").format(DateTime.now());
+    String datef = DateFormat("dd-MM-yyy").format(date);
+    bool isToday = datef == nowf;
+
+    String nowf2 = DateFormat("dd-MM-yyy")
+        .format(DateTime.now().subtract(Duration(days: 1)));
+    String datef2 = DateFormat("dd-MM-yyy").format(date);
+    bool isYesterday = datef2 == nowf2;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (index == 0)
-          Text(
-            "Today",
-            style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-              color: Color(0xff426586),
-            ),
+        if (isToday)
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Today",
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff426586),
+                ),
+              ),
+              SizedBox(
+                height: 8.0,
+              ),
+            ],
           ),
-        if (index == 0)
-          SizedBox(
-            height: 8.0,
+        if (isYesterday)
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Yesterday",
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff426586),
+                ),
+              ),
+              SizedBox(
+                height: 8.0,
+              ),
+            ],
+          ),
+        if (!isToday && !isYesterday)
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "$dMMMy",
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff426586),
+                ),
+              ),
+              SizedBox(
+                height: 8.0,
+              ),
+            ],
           ),
         Row(
           children: [
             Container(
               width: 50,
               child: Text(
-                "10:10",
+                "$time",
                 style: TextStyle(
                   fontSize: 16.0,
                 ),
@@ -47,10 +109,9 @@ class OrderItem extends StatelessWidget {
               height: 8.0,
             ),
             CircleAvatar(
-              backgroundColor:
-                  index % 4 == 0 ? Color(0xff0563ff) : successColor,
+              backgroundColor: color,
               child: Icon(
-                index % 4 == 0 ? Icons.arrow_upward : Icons.arrow_downward,
+                icon,
                 color: Colors.white,
               ),
             ),
@@ -62,7 +123,7 @@ class OrderItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "#1101",
+                    "#${item["id"]}",
                     style: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold,
@@ -73,7 +134,7 @@ class OrderItem extends StatelessWidget {
                     height: 4.0,
                   ),
                   Text(
-                    "Sales",
+                    "${item["type"]}",
                     style: TextStyle(
                       fontSize: 16.0,
                       color: Color(0xff426586),
@@ -86,7 +147,7 @@ class OrderItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  "${NumberFormat().format(Random().nextInt(200000))}",
+                  "${NumberFormat().format(item["total"])}",
                   style: TextStyle(
                     fontSize: 16.0,
                     fontWeight: FontWeight.bold,
@@ -97,7 +158,9 @@ class OrderItem extends StatelessWidget {
                   height: 4.0,
                 ),
                 Text(
-                  "Item",
+                  item["item_count"] != null
+                      ? "${item["item_count"]} Items"
+                      : "--",
                   style: TextStyle(
                     fontSize: 12.0,
                     color: Color(0xff426586),

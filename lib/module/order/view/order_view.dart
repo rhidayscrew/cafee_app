@@ -10,7 +10,7 @@ import '../state/order_state.dart';
 import 'package:get_it/get_it.dart';
 
 class OrderView extends StatefulWidget {
-  const OrderView({Key? key}) : super(key: key);
+  OrderView({Key? key}) : super(key: key);
 
   @override
   State<OrderView> createState() => _OrderViewState();
@@ -65,7 +65,7 @@ class _OrderViewState extends State<OrderView> {
           .toString()), // key : agar tidak ribet hot restart berkalixX, nanti dihapus ajah
 
       appBar: AppBar(
-        title: const Text('Order'),
+        title: Text('Order'),
       ),
       body: Padding(
         padding: EdgeInsets.all(20.0),
@@ -76,15 +76,15 @@ class _OrderViewState extends State<OrderView> {
             SearchFieldCafee(
               onChanged: (value) {},
             ),
-            const SizedBox(
+            SizedBox(
               height: 8.0,
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: 30,
-                physics: const ScrollPhysics(),
+                itemCount: state.items.length,
+                physics: ScrollPhysics(),
                 itemBuilder: (BuildContext context, int index) {
-                  Map item = {};
+                  Map item = state.items[index];
                   return OrderItem(
                     index: index,
                     item: item,
