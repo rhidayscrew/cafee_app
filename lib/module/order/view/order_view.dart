@@ -21,6 +21,7 @@ class _OrderViewState extends State<OrderView> {
 
   @override
   void initState() {
+    // unutk mendaftarkan / register get.It
     if (GetIt.I.isRegistered<OrderController>()) {
       GetIt.I.unregister<OrderController>();
     }

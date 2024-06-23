@@ -35,7 +35,7 @@ class OrderState with _$OrderState {
       },
       {
         "id": 1005,
-        "date": "2023-06-26 14:15",
+        "date": "2024-06-22 14:15",
         "type": "Purchase",
         "total": 500.000,
       },
