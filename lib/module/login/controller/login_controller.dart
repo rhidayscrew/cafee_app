@@ -1,4 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:hyper_ui/core.dart';
+
 import 'package:hyper_ui/shared/util/db_service/db_servicee.dart';
 import '../state/login_state.dart';
 import 'package:hyper_ui/bloc_util.dart';
@@ -10,8 +13,9 @@ class LoginController extends Cubit<LoginState> implements IBlocBase {
 
   @override
   void initState() {
-    state.email = DBServicee.get("email");
+    state.email = DBService.get("email");
     state.email = DBServicee.get("password");
+
     //initState event
   }
 
@@ -30,6 +34,7 @@ class LoginController extends Cubit<LoginState> implements IBlocBase {
     emit(state.copyWith());
   }
 
+  // 4 add methodt login
   // 4 add methodt login
   login() async {}
 }

@@ -87,4 +87,7 @@ export 'package:hyper_ui/shared/widget/typography/heading.dart';
 export 'package:hyper_ui/shared/widget/uncategorized/snippet_container/snippet_container.dart';
 export 'package:hyper_ui/shared/widget/uncategorized/snippet_container/snippet_header.dart';
 export 'package:hyper_ui/shared/widget/uncategorized/widget_demo/widget_demo.dart';
+
+export 'package:hyper_ui/state_util.dart';
+
 export 'package:hyper_ui/state_util.dart';
