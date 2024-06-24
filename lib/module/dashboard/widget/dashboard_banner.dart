@@ -10,7 +10,7 @@ class Dashboardbanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150.0,
+      height: 160.0,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: NetworkImage(
@@ -83,9 +83,6 @@ class Dashboardbanner extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          const SizedBox(
-            height: 10.0,
           ),
         ],
       ),
