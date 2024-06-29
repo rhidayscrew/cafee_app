@@ -11,7 +11,8 @@ Color scaffoldBackgroundColor = Colors.white;
 Color successColor = const Color(0xff28a745);
 Color infoColor = const Color(0xff17a2b8);
 Color warningColor = const Color(0xffffc107);
-Color dangerColor = const Color(0xffdc3545);
+
+Color dangerColor = const Color(0xffec5151);
 
 Color inputColor = Colors.grey[300]!;
 double inputHeight = 52;

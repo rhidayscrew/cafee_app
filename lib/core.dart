@@ -7,18 +7,35 @@ export 'package:hyper_ui/bloc_util.dart';
 export 'package:hyper_ui/config.dart';
 export 'package:hyper_ui/core_package.dart';
 export 'package:hyper_ui/demo.dart';
+
+export 'package:hyper_ui/injection.config.dart';
 export 'package:hyper_ui/injection.dart';
+export 'package:hyper_ui/module/dashboard/controller/dashboard_controller.dart';
+export 'package:hyper_ui/module/dashboard/state/dashboard_state.dart';
+export 'package:hyper_ui/module/dashboard/view/dashboard_view.dart';
 export 'package:hyper_ui/module/login/controller/login_controller.dart';
 export 'package:hyper_ui/module/login/state/login_state.dart';
 export 'package:hyper_ui/module/login/view/login_view.dart';
+export 'package:hyper_ui/module/main_navigation/controller/main_navigation_controller.dart';
+export 'package:hyper_ui/module/main_navigation/state/main_navigation_state.dart';
+export 'package:hyper_ui/module/main_navigation/view/main_navigation_view.dart';
+export 'package:hyper_ui/module/order/controller/order_controller.dart';
+export 'package:hyper_ui/module/order/state/order_state.dart';
+export 'package:hyper_ui/module/order/view/order_view.dart';
+export 'package:hyper_ui/module/profile/controller/profile_controller.dart';
+export 'package:hyper_ui/module/profile/state/profile_state.dart';
+export 'package:hyper_ui/module/profile/view/profile_view.dart';
+export 'package:hyper_ui/service/db_service/db_service.dart';
+
 export 'package:hyper_ui/setup.dart';
 export 'package:hyper_ui/shared/theme/theme.dart';
 export 'package:hyper_ui/shared/theme/theme_config.dart';
 export 'package:hyper_ui/shared/theme/theme_dark.dart';
 export 'package:hyper_ui/shared/theme/theme_size.dart';
 export 'package:hyper_ui/shared/util/animation/animation.dart';
-export 'package:hyper_ui/shared/util/db_service/db_service.dart';
+
 export 'package:hyper_ui/shared/util/db_service/db_servicee.dart';
+
 export 'package:hyper_ui/shared/util/dialog/confirmation_dialog.dart';
 export 'package:hyper_ui/shared/util/dialog/show_bottom_sheet.dart';
 export 'package:hyper_ui/shared/util/dialog/show_custom_dialog.dart';
@@ -87,7 +104,5 @@ export 'package:hyper_ui/shared/widget/typography/heading.dart';
 export 'package:hyper_ui/shared/widget/uncategorized/snippet_container/snippet_container.dart';
 export 'package:hyper_ui/shared/widget/uncategorized/snippet_container/snippet_header.dart';
 export 'package:hyper_ui/shared/widget/uncategorized/widget_demo/widget_demo.dart';
-
-export 'package:hyper_ui/state_util.dart';
 
 export 'package:hyper_ui/state_util.dart';

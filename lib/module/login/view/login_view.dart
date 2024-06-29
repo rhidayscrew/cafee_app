@@ -127,6 +127,7 @@ class _LoginViewState extends State<LoginView> {
                   value: controller.state.email,
                   onChanged: (value) {
                     controller.state.email = value; //7 add ini
+
                     DBServicee.set("email", value);
                   },
                 )
@@ -146,6 +147,7 @@ class _LoginViewState extends State<LoginView> {
                   value: null,
                   onChanged: (value) {
                     controller.state.password = value; //7 add ini
+
                     DBServicee.set("password", value);
                   },
                 )

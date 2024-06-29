@@ -1,14 +1,9 @@
 {
-    "modules": [
-        "login"
-    ],
-    "module_directory_name": "module",
-    "experimental_mode": false,
-    "learning_mode": false,
-    "unfreezed": true,
-    "use_cubit": true,
-    "ignore_core_generator_for_directories": [
-        "lib/model",
-        "lib/models"
-    ]
+  "modules": ["login", "main_navigation", "dashboard", "order", "profile"],
+  "module_directory_name": "module",
+  "experimental_mode": false,
+  "learning_mode": false,
+  "unfreezed": true,
+  "use_cubit": true,
+  "ignore_core_generator_for_directories": ["lib/model", "lib/models"]
 }
