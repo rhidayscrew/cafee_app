@@ -18,6 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$OrderState {
   int get counter => throw _privateConstructorUsedError;
   set counter(int value) => throw _privateConstructorUsedError;
+  List<dynamic> get items => throw _privateConstructorUsedError;
+  set items(List<dynamic> value) => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $OrderStateCopyWith<OrderState> get copyWith =>
@@ -30,7 +32,7 @@ abstract class $OrderStateCopyWith<$Res> {
           OrderState value, $Res Function(OrderState) then) =
       _$OrderStateCopyWithImpl<$Res, OrderState>;
   @useResult
-  $Res call({int counter});
+  $Res call({int counter, List<dynamic> items});
 }
 
 /// @nodoc
@@ -47,12 +49,17 @@ class _$OrderStateCopyWithImpl<$Res, $Val extends OrderState>
   @override
   $Res call({
     Object? counter = null,
+    Object? items = null,
   }) {
     return _then(_value.copyWith(
       counter: null == counter
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
+      items: null == items
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
     ) as $Val);
   }
 }
@@ -65,7 +72,7 @@ abstract class _$$OrderStateImplCopyWith<$Res>
       __$$OrderStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int counter});
+  $Res call({int counter, List<dynamic> items});
 }
 
 /// @nodoc
@@ -80,12 +87,17 @@ class __$$OrderStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? counter = null,
+    Object? items = null,
   }) {
     return _then(_$OrderStateImpl(
       counter: null == counter
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
+      items: null == items
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
     ));
   }
 }
@@ -93,15 +105,159 @@ class __$$OrderStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$OrderStateImpl implements _OrderState {
-  _$OrderStateImpl({this.counter = 0});
+  _$OrderStateImpl(
+      {this.counter = 0,
+      this.items = const [
+        {
+          "id": 1001,
+          "date": "2024-06-23 10:25",
+          "type": "Sales",
+          "total": 250.0,
+          "item_count": 5
+        },
+        {
+          "id": 1002,
+          "date": "2024-06-23 11:30",
+          "type": "Purchase",
+          "total": 300.0
+        },
+        {
+          "id": 1003,
+          "date": "2024-06-22 09:20",
+          "type": "Sales",
+          "total": 150.0,
+          "item_count": 3
+        },
+        {
+          "id": 1004,
+          "date": "2024-06-22 08:45",
+          "type": "Sales",
+          "total": 450.0,
+          "item_count": 10
+        },
+        {
+          "id": 1005,
+          "date": "2024-06-22 14:15",
+          "type": "Purchase",
+          "total": 500.0
+        },
+        {
+          "id": 1006,
+          "date": "2023-06-26 16:00",
+          "type": "Sales",
+          "total": 100.0,
+          "item_count": 2
+        },
+        {
+          "id": 1007,
+          "date": "2023-11-29 10:10",
+          "type": "Purchase",
+          "total": 350.0,
+          "item_count": 8
+        },
+        {
+          "id": 1008,
+          "date": "2023-11-30 12:25",
+          "type": "Sales",
+          "total": 400.0,
+          "item_count": 9
+        },
+        {
+          "id": 1009,
+          "date": "2023-12-01 11:55",
+          "type": "Sales",
+          "total": 200.0,
+          "item_count": 4
+        },
+        {
+          "id": 1010,
+          "date": "2023-12-02 14:35",
+          "type": "Purchase",
+          "total": 600.0,
+          "item_count": 15
+        },
+        {
+          "id": 1011,
+          "date": "2023-12-03 09:45",
+          "type": "Sales",
+          "total": 700.0,
+          "item_count": 16
+        },
+        {
+          "id": 1012,
+          "date": "2023-12-04 13:20",
+          "type": "Sales",
+          "total": 150.0,
+          "item_count": 3
+        },
+        {
+          "id": 1013,
+          "date": "2023-12-05 15:10",
+          "type": "Purchase",
+          "total": 250.0,
+          "item_count": 6
+        },
+        {
+          "id": 1014,
+          "date": "2023-12-06 16:45",
+          "type": "Sales",
+          "total": 550.0,
+          "item_count": 13
+        },
+        {
+          "id": 1015,
+          "date": "2023-12-07 08:30",
+          "type": "Sales",
+          "total": 450.0,
+          "item_count": 10
+        },
+        {
+          "id": 1016,
+          "date": "2023-12-08 10:50",
+          "type": "Purchase",
+          "total": 300.0,
+          "item_count": 7
+        },
+        {
+          "id": 1017,
+          "date": "2023-12-09 14:00",
+          "type": "Sales",
+          "total": 650.0,
+          "item_count": 14
+        },
+        {
+          "id": 1018,
+          "date": "2023-12-10 12:15",
+          "type": "Purchase",
+          "total": 400.0,
+          "item_count": 9
+        },
+        {
+          "id": 1019,
+          "date": "2023-12-11 15:40",
+          "type": "Sales",
+          "total": 200.0,
+          "item_count": 5
+        },
+        {
+          "id": 1020,
+          "date": "2023-12-12 09:25",
+          "type": "Sales",
+          "total": 800.0,
+          "item_count": 17
+        }
+      ]});
 
   @override
   @JsonKey()
   int counter;
+  @override
+  @JsonKey()
+  List<dynamic> items;
 
   @override
   String toString() {
-    return 'OrderState(counter: $counter)';
+    return 'OrderState(counter: $counter, items: $items)';
   }
 
   @JsonKey(ignore: true)
@@ -112,11 +268,14 @@ class _$OrderStateImpl implements _OrderState {
 }
 
 abstract class _OrderState implements OrderState {
-  factory _OrderState({int counter}) = _$OrderStateImpl;
+  factory _OrderState({int counter, List<dynamic> items}) = _$OrderStateImpl;
 
   @override
   int get counter;
   set counter(int value);
+  @override
+  List<dynamic> get items;
+  set items(List<dynamic> value);
   @override
   @JsonKey(ignore: true)
   _$$OrderStateImplCopyWith<_$OrderStateImpl> get copyWith =>

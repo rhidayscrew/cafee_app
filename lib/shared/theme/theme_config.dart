@@ -8,7 +8,7 @@ Color textColor = const Color(0xff464646);
 Color secondaryTextColor = const Color(0xff6c7592);
 Color scaffoldBackgroundColor = Colors.white;
 
-Color successColor = const Color(0xff28a745);
+Color successColor = const Color(0xff0fcaad);
 Color infoColor = const Color(0xff17a2b8);
 Color warningColor = const Color(0xffffc107);
 

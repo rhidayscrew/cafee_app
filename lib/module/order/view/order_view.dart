@@ -1,12 +1,16 @@
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/module/order/widget/order_item.dart';
+import 'package:hyper_ui/shared/widget/form/searchfield/searchfieldcafee.dart';
 import '../controller/order_controller.dart';
 import '../state/order_state.dart';
 import 'package:get_it/get_it.dart';
 
 class OrderView extends StatefulWidget {
-  const OrderView({Key? key}) : super(key: key);
+  OrderView({Key? key}) : super(key: key);
 
   @override
   State<OrderView> createState() => _OrderViewState();
@@ -17,6 +21,7 @@ class _OrderViewState extends State<OrderView> {
 
   @override
   void initState() {
+    // unutk mendaftarkan / register get.It
     if (GetIt.I.isRegistered<OrderController>()) {
       GetIt.I.unregister<OrderController>();
     }
@@ -56,28 +61,41 @@ class _OrderViewState extends State<OrderView> {
     OrderState state,
   ) {
     return Scaffold(
+      key: Key(Random()
+          .nextInt(1000)
+          .toString()), // key : agar tidak ribet hot restart berkalixX, nanti dihapus ajah
+
       appBar: AppBar(
-        title: const Text('Order'),
+        title: Text('Order'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text(
-            'Counter: ${state.counter}',
-            style: const TextStyle(fontSize: 24),
-          ),
-          IconButton(
-            onPressed: () => controller.increment(),
-            icon: const Icon(
-              Icons.add,
-              size: 24.0,
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SearchFieldCafee(
+              onChanged: (value) {},
             ),
-          ),
-        ],
+            SizedBox(
+              height: 8.0,
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: state.items.length,
+                physics: ScrollPhysics(),
+                itemBuilder: (BuildContext context, int index) {
+                  Map item = state.items[index];
+                  return OrderItem(
+                    index: index,
+                    item: item,
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-    
-    
