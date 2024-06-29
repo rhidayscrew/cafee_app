@@ -30,13 +30,11 @@ extension GetItInjectableX on _i1.GetIt {
       environmentFilter,
     );
     gh.singleton<_i3.LoginController>(() => _i3.LoginController());
-
     gh.singleton<_i4.DashboardController>(() => _i4.DashboardController());
     gh.singleton<_i5.MainNavigationController>(
         () => _i5.MainNavigationController());
     gh.singleton<_i6.OrderController>(() => _i6.OrderController());
     gh.singleton<_i7.ProfileController>(() => _i7.ProfileController());
-
     return this;
   }
 }
