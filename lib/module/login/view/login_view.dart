@@ -1,7 +1,8 @@
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_ui/service/db_service/db_service.dart';
+import 'package:hyper_ui/shared/util/db_service/db_servicee.dart';
 import 'package:hyper_ui/shared/util/validator/validator.dart';
 import 'package:hyper_ui/shared/widget/form/button/button.dart';
 import 'package:hyper_ui/shared/widget/form/textfield/text_field.dart';
@@ -108,6 +109,16 @@ class _LoginViewState extends State<LoginView> {
                       ),
                     ],
                   ),
+                )
+                    .animate()
+                    .moveY(
+                      duration: 800.ms,
+                    )
+                    .fadeIn(
+                      duration: 800.ms,
+                    ),
+                SizedBox(
+                  height: 20.0,
                 ),
                 QTextField(
                   label: "Email",
@@ -116,9 +127,18 @@ class _LoginViewState extends State<LoginView> {
                   value: controller.state.email,
                   onChanged: (value) {
                     controller.state.email = value; //7 add ini
-                    DBService.set("email", value);
+
+                    DBServicee.set("email", value);
                   },
-                ),
+                )
+                    .animate()
+                    .moveX(
+                      begin: 100,
+                      duration: 800.ms,
+                    )
+                    .fadeIn(
+                      duration: 800.ms,
+                    ),
                 QTextField(
                   label: "Password",
                   obscure: true,
@@ -127,8 +147,18 @@ class _LoginViewState extends State<LoginView> {
                   value: null,
                   onChanged: (value) {
                     controller.state.password = value; //7 add ini
+
+                    DBServicee.set("password", value);
                   },
-                ),
+                )
+                    .animate()
+                    .moveX(
+                      begin: 100,
+                      duration: 800.ms,
+                    )
+                    .fadeIn(
+                      duration: 800.ms,
+                    ),
                 QButton(
                   label: "Login",
                   onPressed: () {
