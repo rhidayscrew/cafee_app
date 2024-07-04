@@ -8,7 +8,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Diointerceptors.init();
 
-  await DBService.init(); //tambahakan ini unutk menginisialisasi Dbservice
+  await DBServicee.init(); //tambahakan ini unutk menginisialisasi Dbservice
   runMainApp();
 }
 
@@ -41,8 +41,8 @@ class _MainAppState extends State<MainApp> {
       navigatorKey: Get.navigatorKey,
       debugShowCheckedModeBanner: false,
       theme: getDefaultTheme(),
-      // home: LoginView(),
-      home: DashboardView(),
+      home: LoginView(),
+      //home: MainNavigationView(),
       onGenerateRoute: (routeSettings) {
         print(routeSettings.name);
         return null;
