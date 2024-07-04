@@ -14,7 +14,7 @@ class LoginController extends Cubit<LoginState> implements IBlocBase {
 
   @override
   void initState() {
-    state.email = DBService.get("email");
+    state.email = DBServicee.get("email");
     state.email = DBServicee.get("password");
 
     //initState event

@@ -272,98 +272,106 @@ class _DashboardViewState extends State<DashboardView> {
                       physics: ScrollPhysics(),
                       itemBuilder: (BuildContext context, int index) {
                         var item = state.products[index];
-                        return Container(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(item["photo"] ??
-                                          "https://res.cloudinary.com/dotz74j1p/image/upload/v1715660683/no-image.jpg"),
-                                      fit: BoxFit.cover,
-                                    ),
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(
-                                        8.0,
+                        return InkWell(
+                          onTap: () => Get.to(ProductDetailView(
+                            item: item,
+                          )),
+                          child: Container(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: NetworkImage(item["photo"] ??
+                                            "https://res.cloudinary.com/dotz74j1p/image/upload/v1715660683/no-image.jpg"),
+                                        fit: BoxFit.cover,
+                                      ),
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(
+                                          8.0,
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 6.0,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 8.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      item["product_name"],
-                                      style: TextStyle(
-                                        fontSize: 16.0,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      height: 4.0,
-                                    ),
-                                    Text(
-                                      item["category"],
-                                      style: TextStyle(
-                                        fontSize: 12.0,
-                                        color: Color(0xff9a9a9a),
-                                      ),
-                                    ),
-                                    Row(
-                                      children: [
-                                        Expanded(
-                                          child: Text(
-                                            "\$${item["price"]}",
-                                            style: TextStyle(
-                                              fontSize: 16.0,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
+                                SizedBox(
+                                  height: 6.0,
+                                ),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 8.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        item["product_name"],
+                                        style: TextStyle(
+                                          fontSize: 16.0,
+                                          fontWeight: FontWeight.bold,
                                         ),
-                                        Container(
-                                          height: 32,
-                                          width: 32,
-                                          child: ElevatedButton(
-                                            onPressed: () {},
-                                            style: ElevatedButton.styleFrom(
-                                              backgroundColor: primaryColor,
-                                              padding: EdgeInsets.all(0.0),
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                      ),
+                                      const SizedBox(
+                                        height: 4.0,
+                                      ),
+                                      Text(
+                                        item["category"],
+                                        style: TextStyle(
+                                          fontSize: 12.0,
+                                          color: Color(0xff9a9a9a),
+                                        ),
+                                      ),
+                                      Row(
+                                        children: [
+                                          Expanded(
+                                            child: Text(
+                                              "\$${item["price"]}",
+                                              style: TextStyle(
+                                                fontSize: 16.0,
+                                                fontWeight: FontWeight.bold,
                                               ),
                                             ),
-                                            child: Icon(
-                                              Icons.add,
-                                              size: 24.0,
-                                              color: Colors.white,
+                                          ),
+                                          Container(
+                                            height: 32,
+                                            width: 32,
+                                            child: ElevatedButton(
+                                              onPressed: () {},
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: primaryColor,
+                                                padding: EdgeInsets.all(0.0),
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                              ),
+                                              child: Icon(
+                                                Icons.add,
+                                                size: 24.0,
+                                                color: Colors.white,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
+                              ],
+                            ),
+                          )
+                              .animate()
+                              .moveY(
+                                begin: index % 2 == 0 ? -100 : 100,
+                                duration: ((index * 300) + 800).ms,
+                              )
+                              .fadeIn(
+                                duration: ((index * 300) + 800).ms,
                               ),
-                            ],
-                          ),
-                        )
-                            .animate()
-                            .moveY(
-                              begin: index % 2 == 0 ? -100 : 100,
-                              duration: ((index * 300) + 800).ms,
-                            )
-                            .fadeIn(
-                              duration: ((index * 300) + 800).ms,
-                            );
+                        );
                       },
                     );
                   }),

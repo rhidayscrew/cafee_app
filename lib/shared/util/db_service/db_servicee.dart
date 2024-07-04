@@ -1,7 +1,14 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class DBServicee {
+  //static final DBService _instance = DBService._internal();
   static SharedPreferences? prefs;
+  // static late SharedPreferences prefs;
+  // DBService._internal();
+  // factory DBService() {
+  //   return _instance;
+  // }
+
   static init() async {
     prefs = await SharedPreferences.getInstance();
   }
@@ -10,11 +17,7 @@ class DBServicee {
     return prefs?.getString(key);
   }
 
-  static clear(String key) async {
-    await prefs?.remove(key);
-  }
-
-  static set(String key, String value) async {
+  static Future set(String key, String value) async {
     await prefs?.setString(key, value);
   }
 }
@@ -32,4 +35,7 @@ class DBServicee {
 
 
 
+
+
+// // membuat db service
 

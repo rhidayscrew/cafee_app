@@ -41,7 +41,8 @@ class _MainAppState extends State<MainApp> {
       navigatorKey: Get.navigatorKey,
       debugShowCheckedModeBanner: false,
       theme: getDefaultTheme(),
-      home: LoginView(),
+      // home: LoginView(),
+      home: DashboardView(),
       onGenerateRoute: (routeSettings) {
         print(routeSettings.name);
         return null;
