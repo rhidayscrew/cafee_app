@@ -16,6 +16,7 @@ import 'module/login/controller/login_controller.dart' as _i3;
 import 'module/main_navigation/controller/main_navigation_controller.dart'
     as _i5;
 import 'module/order/controller/order_controller.dart' as _i6;
+import 'module/product_detail/controller/product_detail_controller.dart' as _i8;
 import 'module/profile/controller/profile_controller.dart' as _i7;
 
 extension GetItInjectableX on _i1.GetIt {
@@ -35,6 +36,8 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i5.MainNavigationController());
     gh.singleton<_i6.OrderController>(() => _i6.OrderController());
     gh.singleton<_i7.ProfileController>(() => _i7.ProfileController());
+    gh.singleton<_i8.ProductDetailController>(
+        () => _i8.ProductDetailController());
     return this;
   }
 }

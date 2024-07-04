@@ -13,6 +13,7 @@ class QCategoryPicker extends StatefulWidget {
     this.label,
     this.hint,
     this.helper,
+    this.titleStyle,
   });
   final List<Map<String, dynamic>> items;
   final String? label;
@@ -20,6 +21,7 @@ class QCategoryPicker extends StatefulWidget {
   final String? Function(int? value)? validator;
   final String? hint;
   final String? helper;
+  final TextStyle? titleStyle; // add ini
 
   final Function(
     Map<String, dynamic> item,
@@ -59,10 +61,11 @@ class _QCategoryPickerState extends State<QCategoryPicker> {
       children: [
         Text(
           '${widget.label}',
-          style: TextStyle(
-            fontSize: 12,
-            color: Theme.of(context).textTheme.bodySmall?.color,
-          ),
+          style: widget.titleStyle ??
+              TextStyle(
+                fontSize: 12.0,
+                color: Theme.of(context).textTheme.bodySmall?.color,
+              ),
         ),
         const SizedBox(
           height: 6,
@@ -93,17 +96,18 @@ class _QCategoryPickerState extends State<QCategoryPicker> {
         builder: (FormFieldState<bool> field) {
           return InputDecorator(
             decoration: InputDecoration(
-              labelText: widget.label,
-              errorText: field.errorText,
-              border: InputBorder.none,
-              focusedBorder: InputBorder.none,
-              filled: false,
-              fillColor: Colors.transparent,
-              enabledBorder: InputBorder.none,
-              errorBorder: InputBorder.none,
-              helperText: widget.helper,
-              hintText: widget.hint,
-            ),
+                labelText: widget.label,
+                errorText: field.errorText,
+                border: InputBorder.none,
+                focusedBorder: InputBorder.none,
+                filled: false,
+                fillColor: Colors.transparent,
+                enabledBorder: InputBorder.none,
+                errorBorder: InputBorder.none,
+                helperText: widget.helper,
+                hintText: widget.hint,
+                labelStyle: widget.titleStyle // add ini untuk title category
+                ),
             child: SizedBox(
               width: MediaQuery.of(context).size.width,
               child: Column(

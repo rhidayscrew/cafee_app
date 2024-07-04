@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-class DBService {
+class DBServicez {
   //static final DBService _instance = DBService._internal();
   static SharedPreferences? prefs;
   // static late SharedPreferences prefs;
