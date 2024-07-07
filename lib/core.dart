@@ -7,9 +7,11 @@ export 'package:hyper_ui/bloc_util.dart';
 export 'package:hyper_ui/config.dart';
 export 'package:hyper_ui/core_package.dart';
 export 'package:hyper_ui/demo.dart';
-
 export 'package:hyper_ui/injection.config.dart';
 export 'package:hyper_ui/injection.dart';
+export 'package:hyper_ui/module/cart/controller/cart_controller.dart';
+export 'package:hyper_ui/module/cart/state/cart_state.dart';
+export 'package:hyper_ui/module/cart/view/cart_view.dart';
 export 'package:hyper_ui/module/dashboard/controller/dashboard_controller.dart';
 export 'package:hyper_ui/module/dashboard/state/dashboard_state.dart';
 export 'package:hyper_ui/module/dashboard/view/dashboard_view.dart';
@@ -31,17 +33,15 @@ export 'package:hyper_ui/module/profile/controller/profile_controller.dart';
 export 'package:hyper_ui/module/profile/state/profile_state.dart';
 export 'package:hyper_ui/module/profile/view/profile_view.dart';
 export 'package:hyper_ui/service/db_service/db_service.dart';
-
+//export 'package:hyper_ui/service/db_service/db_servicee.dart';
 export 'package:hyper_ui/setup.dart';
 export 'package:hyper_ui/shared/theme/theme.dart';
 export 'package:hyper_ui/shared/theme/theme_config.dart';
 export 'package:hyper_ui/shared/theme/theme_dark.dart';
 export 'package:hyper_ui/shared/theme/theme_size.dart';
 export 'package:hyper_ui/shared/util/animation/animation.dart';
-
 export 'package:hyper_ui/shared/util/db_service/db_service.dart';
 export 'package:hyper_ui/shared/util/db_service/db_servicee.dart';
-
 export 'package:hyper_ui/shared/util/dialog/confirmation_dialog.dart';
 export 'package:hyper_ui/shared/util/dialog/show_bottom_sheet.dart';
 export 'package:hyper_ui/shared/util/dialog/show_custom_dialog.dart';
@@ -107,6 +107,7 @@ export 'package:hyper_ui/shared/widget/menu/menu.dart';
 export 'package:hyper_ui/shared/widget/navigation/qnavigation.dart';
 export 'package:hyper_ui/shared/widget/scaffold/loading_scaffold.dart';
 export 'package:hyper_ui/shared/widget/statistic/statistic.dart';
+export 'package:hyper_ui/shared/widget/text/more_text/more_text.dart';
 export 'package:hyper_ui/shared/widget/typography/heading.dart';
 export 'package:hyper_ui/shared/widget/uncategorized/snippet_container/snippet_container.dart';
 export 'package:hyper_ui/shared/widget/uncategorized/snippet_container/snippet_header.dart';
