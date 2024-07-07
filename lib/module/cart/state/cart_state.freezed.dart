@@ -18,6 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$CartState {
   int get counter => throw _privateConstructorUsedError;
   set counter(int value) => throw _privateConstructorUsedError;
+  bool get visible => throw _privateConstructorUsedError;
+  set visible(bool value) => throw _privateConstructorUsedError;
   List<dynamic> get items => throw _privateConstructorUsedError;
   set items(List<dynamic> value) => throw _privateConstructorUsedError;
 
@@ -31,7 +33,7 @@ abstract class $CartStateCopyWith<$Res> {
   factory $CartStateCopyWith(CartState value, $Res Function(CartState) then) =
       _$CartStateCopyWithImpl<$Res, CartState>;
   @useResult
-  $Res call({int counter, List<dynamic> items});
+  $Res call({int counter, bool visible, List<dynamic> items});
 }
 
 /// @nodoc
@@ -48,6 +50,7 @@ class _$CartStateCopyWithImpl<$Res, $Val extends CartState>
   @override
   $Res call({
     Object? counter = null,
+    Object? visible = null,
     Object? items = null,
   }) {
     return _then(_value.copyWith(
@@ -55,6 +58,10 @@ class _$CartStateCopyWithImpl<$Res, $Val extends CartState>
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
+      visible: null == visible
+          ? _value.visible
+          : visible // ignore: cast_nullable_to_non_nullable
+              as bool,
       items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
@@ -71,7 +78,7 @@ abstract class _$$CartStateImplCopyWith<$Res>
       __$$CartStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int counter, List<dynamic> items});
+  $Res call({int counter, bool visible, List<dynamic> items});
 }
 
 /// @nodoc
@@ -86,6 +93,7 @@ class __$$CartStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? counter = null,
+    Object? visible = null,
     Object? items = null,
   }) {
     return _then(_$CartStateImpl(
@@ -93,6 +101,10 @@ class __$$CartStateImplCopyWithImpl<$Res>
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
+      visible: null == visible
+          ? _value.visible
+          : visible // ignore: cast_nullable_to_non_nullable
+              as bool,
       items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
@@ -106,6 +118,7 @@ class __$$CartStateImplCopyWithImpl<$Res>
 class _$CartStateImpl implements _CartState {
   _$CartStateImpl(
       {this.counter = 0,
+      this.visible = true,
       this.items = const [
         {
           "id": 1,
@@ -234,11 +247,14 @@ class _$CartStateImpl implements _CartState {
   int counter;
   @override
   @JsonKey()
+  bool visible;
+  @override
+  @JsonKey()
   List<dynamic> items;
 
   @override
   String toString() {
-    return 'CartState(counter: $counter, items: $items)';
+    return 'CartState(counter: $counter, visible: $visible, items: $items)';
   }
 
   @JsonKey(ignore: true)
@@ -249,11 +265,15 @@ class _$CartStateImpl implements _CartState {
 }
 
 abstract class _CartState implements CartState {
-  factory _CartState({int counter, List<dynamic> items}) = _$CartStateImpl;
+  factory _CartState({int counter, bool visible, List<dynamic> items}) =
+      _$CartStateImpl;
 
   @override
   int get counter;
   set counter(int value);
+  @override
+  bool get visible;
+  set visible(bool value);
   @override
   List<dynamic> get items;
   set items(List<dynamic> value);

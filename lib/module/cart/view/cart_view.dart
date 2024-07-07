@@ -238,65 +238,92 @@ class _CartViewState extends State<CartView> {
                   );
             },
           ),
-          Positioned(
-            left: 20,
-            right: 20,
-            bottom: 20,
-            child: Container(
-              padding: EdgeInsets.all(12.0),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x19000000),
-                    blurRadius: 24,
-                    offset: Offset(0, 11),
+          if (state.visible == true)
+            Positioned(
+              left: 20,
+              right: 20,
+              bottom: 20,
+              child: GestureDetector(
+                onTap: () => controller.updateVisiblity(),
+                child: Container(
+                  padding: EdgeInsets.all(12.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0x19000000),
+                        blurRadius: 24,
+                        offset: Offset(0, 11),
+                      ),
+                    ],
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(12.0),
+                    ),
+                    border: Border.all(
+                      width: 1.0,
+                      color: Colors.grey[300]!,
+                    ),
                   ),
-                ],
-                borderRadius: BorderRadius.all(
-                  Radius.circular(12.0),
-                ),
-                border: Border.all(
-                  width: 1.0,
-                  color: Colors.grey[300]!,
-                ),
+                  // 05 add child and col+Tab
+                  // RowItem memakan reusable widget cek di shared - widget dll
+                  child: Column(
+                    children: [
+                      H6(
+                        title: "Payment Summary",
+                      ),
+                      RowItem(
+                        title: "Sub Total",
+                        subtitle: "\$100.25",
+                      ),
+                      RowItem(
+                        title: "Discount",
+                        subtitle: "\$10",
+                      ),
+                      RowItem(
+                        title: "Total",
+                        subtitle: "\$90.25",
+                      ),
+                      Divider(),
+                      QButton(
+                        label: "Checkout",
+                        onPressed: () {},
+                      )
+                    ],
+                  ),
+                )
+                    .animate()
+                    .moveY(
+                      begin: 200,
+                      duration: 1000.ms,
+                    )
+                    .fadeIn(
+                      duration: 1000.ms,
+                    ),
               ),
-              // 05 add child and col+Tab
-              // RowItem memakan reusable widget cek di shared - widget dll
-              child: Column(
-                children: [
-                  H6(
-                    title: "Payment Summary",
+            ),
+          if (state.visible == false)
+            Positioned(
+              right: 20,
+              bottom: 40,
+              child: GestureDetector(
+                onTap: () => controller.updateVisiblity(),
+                child: CircleAvatar(
+                  backgroundColor: primaryColor,
+                  child: Icon(
+                    Icons.shopping_basket,
+                    color: Colors.white,
                   ),
-                  RowItem(
-                    title: "Sub Total",
-                    subtitle: "\$100.25",
-                  ),
-                  RowItem(
-                    title: "Discount",
-                    subtitle: "\$10",
-                  ),
-                  RowItem(
-                    title: "Total",
-                    subtitle: "\$90.25",
-                  ),
-                  Divider(),
-                  QButton(
-                    label: "Checkout",
-                    onPressed: () {},
-                  )
-                ],
+                )
+                    .animate()
+                    .moveY(
+                      begin: 100,
+                      duration: 2000.ms,
+                    )
+                    .fadeIn(
+                      duration: 1000.ms,
+                    ),
               ),
             )
-                .animate()
-                .moveY(
-                  begin: 200,
-                  duration: 1000.ms,
-                )
-                .fadeIn(
-                  duration: 1000.ms,
-                ),
-          ),
         ],
       ),
     );
