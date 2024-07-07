@@ -5,6 +5,7 @@ part 'cart_state.freezed.dart';
 class CartState with _$CartState {
   factory CartState({
     @Default(0) int counter,
+    @Default(true) bool visible,
     @Default([
       {
         "id": 1,

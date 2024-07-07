@@ -1,4 +1,3 @@
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../state/cart_state.dart';
 import 'package:hyper_ui/bloc_util.dart';
@@ -27,7 +26,9 @@ class CartController extends Cubit<CartState> implements IBlocBase {
     state.counter++;
     emit(state.copyWith());
   }
+
+  updateVisiblity() {
+    state.visible = !state.visible;
+    emit(state.copyWith());
+  }
 }
-    
-      
-    
