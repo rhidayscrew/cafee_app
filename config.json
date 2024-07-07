@@ -5,7 +5,8 @@
         "dashboard",
         "order",
         "profile",
-        "product_detail"
+        "product_detail",
+        "cart"
     ],
     "module_directory_name": "module",
     "experimental_mode": false,

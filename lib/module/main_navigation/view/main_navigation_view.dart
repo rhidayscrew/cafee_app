@@ -65,12 +65,12 @@ class _MainNavigationViewState extends State<MainNavigationView> {
     }
     */
     return DefaultTabController(
-      length: 3,
+      length: 4,
       initialIndex: controller.state.selectedIndex,
       child: Scaffold(
         body: IndexedStack(
           index: controller.state.selectedIndex,
-          children: [DashboardView(), OrderView(), ProfileView()],
+          children: [DashboardView(), CartView(), OrderView(), ProfileView()],
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: controller.state.selectedIndex,
@@ -83,6 +83,12 @@ class _MainNavigationViewState extends State<MainNavigationView> {
                 Icons.dashboard,
               ),
               label: "Dashboard",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.shopping_bag,
+              ),
+              label: "Cart",
             ),
             BottomNavigationBarItem(
               icon: Icon(
